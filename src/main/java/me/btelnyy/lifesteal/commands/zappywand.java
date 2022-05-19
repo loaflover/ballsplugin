@@ -2,26 +2,30 @@ package me.btelnyy.lifesteal.commands;
 
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Egg;
 import org.bukkit.entity.Player;
 import org.bukkit.command.Command;
+
+import java.util.ArrayList;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.attribute.Attribute;
+import org.bukkit.Material;
+import org.bukkit.inventory.*;
+import org.bukkit.inventory.meta.ItemMeta;;
 
-public class CommandSetHealth implements CommandExecutor{
+public class zappywand implements CommandExecutor{
     public boolean onCommand(CommandSender sender, Command command, String arg, String[] args){
-        if(args.length < 2){
-            sender.sendMessage(ChatColor.RED + "Error: Invalid syntax. Usage: /sethealth <player> <amount>");
-            return true;
-        }
-        if(Bukkit.getPlayer(args[0]) == null){
-            sender.sendMessage(ChatColor.RED + "Error: Player not found.");
-            return true;
-        }
-        Player target = Bukkit.getPlayer(args[0]);
-        double health = Double.valueOf(args[1]);
-        target.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(health);
-        sender.sendMessage(ChatColor.GRAY + "You have set " + target.getName() + "'s health to " + health);
+        Player user = (Player)sender;
+        ItemStack item = new ItemStack(Material.STICK, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName(ChatColor.YELLOW + "Magic Wand");
+        ArrayList<String> lore = new ArrayList<String>();
+        lore.add("big balls");
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+        user.getInventory().addItem(item);
         return true;
     }
 }

@@ -11,3 +11,7 @@ commands:
       description: give some of your health to another player
       usage: /givehealth <player> <amount>
       permission: btelnyy.command.givehealth
+   zappywand:
+      description: ZAP ZAP
+      usage: /zappywand <player>
+      permission: btelnyy.command.givehealth
