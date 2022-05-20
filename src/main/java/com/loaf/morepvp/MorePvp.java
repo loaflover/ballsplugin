@@ -1,9 +1,9 @@
 package com.loaf.morepvp;
 
+
 import java.util.UUID;
 
-import javax.swing.Action;
-
+import com.loaf.morepvp.EventListiner.InteractListiner;
 import com.loaf.morepvp.commands.CommandSetHealth;
 import com.loaf.morepvp.commands.die;
 import com.loaf.morepvp.commands.zappywand;
@@ -13,27 +13,32 @@ import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.attribute.AttributeModifier.Operation;
-import org.bukkit.block.Block;
-import org.bukkit.block.BlockFace;
+
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Event;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.Listener;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
-public final class MorePvp extends JavaPlugin {
+import org.jetbrains.annotations.NotNull;
+
+
+
+
+public final class MorePvp extends JavaPlugin implements @NotNull Listener {
 
     @Override
     public void onEnable() {
         registerCommandExecutor("zappywand", new zappywand());
         registerCommandExecutor("CommandSetHealth", new CommandSetHealth());
         registerCommandExecutor("die", new die());
-        
+        Bukkit.getPluginManager().registerEvents(new InteractListiner(), this);
+       
     }
+
+  
 
     @Override
     public void onDisable() {
@@ -58,8 +63,5 @@ public final class MorePvp extends JavaPlugin {
 
         meta.addAttributeModifier(Attribute.GENERIC_MAX_HEALTH, modifier);
     }
-    @EventHandler
-    public void onInteract(PlayerInteractEvent event){
-        event.getPlayer().kick(null);
-    }
+    
 }
