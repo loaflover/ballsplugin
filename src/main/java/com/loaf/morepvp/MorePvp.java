@@ -2,17 +2,25 @@ package com.loaf.morepvp;
 
 import java.util.UUID;
 
+import javax.swing.Action;
+
 import com.loaf.morepvp.commands.CommandSetHealth;
 import com.loaf.morepvp.commands.die;
 import com.loaf.morepvp.commands.zappywand;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.attribute.AttributeModifier.Operation;
+import org.bukkit.block.Block;
+import org.bukkit.block.BlockFace;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Event;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -49,5 +57,9 @@ public final class MorePvp extends JavaPlugin {
         ItemMeta meta = item.getItemMeta();
 
         meta.addAttributeModifier(Attribute.GENERIC_MAX_HEALTH, modifier);
+    }
+    @EventHandler
+    public void onInteract(PlayerInteractEvent event){
+        event.getPlayer().kick(null);
     }
 }
