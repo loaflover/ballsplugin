@@ -1,0 +1,13 @@
+name: loaflover-ballsplugin
+main: me.loaflover.ballsplugin.BallsPlugin
+version: ${project.version}
+api-version: 1.18
+commands:
+   zappywand:
+      description: ZAP ZAP
+      usage: /zappywand <player>
+      permission: btelnyy.command.givehealth
+   CommandSetHealth:
+      description: ZAP ZAP
+      usage: /sethealth <player>
+      permission: btelnyy.command.givehealth 
