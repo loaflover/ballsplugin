@@ -1,4 +1,4 @@
-package me.btelnyy.lifesteal.commands;
+package me.loaflover.ballsplugin.commands;
 
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -7,6 +7,10 @@ import org.bukkit.command.Command;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.attribute.Attribute;
+
+//DO NOT DELETE, USE AS EXAMPLE
+
+
 
 public class CommandSetHealth implements CommandExecutor{
     public boolean onCommand(CommandSender sender, Command command, String arg, String[] args){

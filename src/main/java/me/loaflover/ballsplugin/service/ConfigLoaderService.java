@@ -1,11 +1,16 @@
-package me.btelnyy.lifesteal.service;
+package me.loaflover.ballsplugin.service;
 
-import me.btelnyy.lifesteal.constants.*;
+import me.loaflover.ballsplugin.constants.*;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+//the guy who called my code gay wrote this.
+//do not touch it
+
+
 
 public final class ConfigLoaderService {
 

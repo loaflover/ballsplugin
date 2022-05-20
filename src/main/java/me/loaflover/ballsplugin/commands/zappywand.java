@@ -1,16 +1,13 @@
-package me.btelnyy.lifesteal.commands;
+package me.loaflover.ballsplugin.commands;
 
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Egg;
 import org.bukkit.entity.Player;
 import org.bukkit.command.Command;
 
 import java.util.ArrayList;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.attribute.Attribute;
 import org.bukkit.Material;
 import org.bukkit.inventory.*;
 import org.bukkit.inventory.meta.ItemMeta;;

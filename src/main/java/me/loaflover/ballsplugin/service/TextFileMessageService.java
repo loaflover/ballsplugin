@@ -1,4 +1,4 @@
-package me.btelnyy.lifesteal.service;
+package me.loaflover.ballsplugin.service;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,6 +8,11 @@ import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+//the guy who called my code gay wrote this.
+//do not touch it
+
+
 
 public final class TextFileMessageService {
 

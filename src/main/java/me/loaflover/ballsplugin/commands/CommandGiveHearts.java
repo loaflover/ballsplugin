@@ -1,4 +1,4 @@
-package me.btelnyy.lifesteal.commands;
+package me.loaflover.ballsplugin.commands;
 
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -8,6 +8,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.attribute.Attribute;
+
+//DO NOT DELETE, USE AS EXAMPLE
+
+
 
 public class CommandGiveHearts implements CommandExecutor{
     public boolean onCommand(CommandSender sender, Command command, String arg, String[] args){
