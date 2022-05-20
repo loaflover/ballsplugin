@@ -40,6 +40,7 @@ public class BallsPlugin extends JavaPlugin {
         /*
         If you are looking for your code, its in listener/EventListener.java
         your code wouldnt work here cuz this isnt registered as a listener class
+        -btelnyy
         */
     }
 
