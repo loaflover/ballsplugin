@@ -2,3 +2,16 @@ name: MorePvp
 version: '${project.version}'
 main: com.loaf.morepvp.MorePvp
 api-version: 1.18
+commands:
+   zappywand:
+      description: ZAP ZAP
+      usage: /zappywand <player>
+      permission: btelnyy.command.givehealth
+   CommandSetHealth:
+      description: ZAP ZAP
+      usage: /sethealth <player>
+      permission: btelnyy.command.givehealth 
+   die:
+      description: ZAP ZAP
+      usage: /die <player>
+      permission: btelnyy.command.givehealth 
