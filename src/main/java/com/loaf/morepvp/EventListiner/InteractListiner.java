@@ -93,10 +93,10 @@ public class InteractListiner implements Listener{
         if (weaponname.equals("Magic Wand")){
             //Bukkit.getConsoleSender().sendMessage(hitter.getInventory().getItemInMainHand().getItemMeta().getDisplayName());
             
-            
+            new BukkitRunnable(){public void run(){event.getEntity().setVelocity(new Vector(0, 1, 0));}}.runTaskLater(Bukkit.getPluginManager().getPlugin("morepvp"), 1);
             //Player damaged = (Player)event.getEntity();
             //Bukkit.broadcastMessage(event.getEntity().getName());
-            event.getEntity().setVelocity(new Vector(0, 5, 0));
+            
         }else if(weaponname.equals("bomb on a stick")){
             Location loc = event.getEntity().getLocation();
             if(event.getCause().equals(DamageCause.ENTITY_ATTACK)){
