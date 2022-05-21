@@ -18,24 +18,14 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import net.kyori.adventure.text.*;
 
-public class zappywand implements CommandExecutor{
+public class boomboom implements CommandExecutor{
     public boolean onCommand(CommandSender sender, Command command, String arg, String[] args){
         Player user = (Player)sender;
         ItemStack item = new ItemStack(Material.STICK, 1);
         ItemMeta meta = item.getItemMeta();
-        //I fucking hate deprecated warnings, but the API documentation is about as vague as fucking ddlc lore
-        meta.setDisplayName("Magic Wand");
-        //what
-        //the
-        //fuck
-        //is 
-        //this
-        /*
-        ArrayList<Component> lore = new ArrayList<Component>();
-        Component c = Component.text("big balls");
-        lore.add(c);
-        meta.lore().add(c);
-        */
+        
+        meta.setDisplayName("bomb on a stick");
+        
         ArrayList<String> lore = new ArrayList<String>();
         lore.add("big balls");
         meta.setLore(lore);

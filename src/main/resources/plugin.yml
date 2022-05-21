@@ -15,3 +15,11 @@ commands:
       description: ZAP ZAP
       usage: /die <player>
       permission: btelnyy.command.givehealth 
+   swap:
+      description: ZAP ZAP
+      usage: /swap
+      permission: btelnyy.command.givehealth 
+   boomboom:
+      description: ZAP ZAP
+      usage: /boomboom
+      permission: btelnyy.command.givehealth 

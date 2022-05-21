@@ -5,7 +5,9 @@ import java.util.UUID;
 
 import com.loaf.morepvp.EventListiner.InteractListiner;
 import com.loaf.morepvp.commands.CommandSetHealth;
+import com.loaf.morepvp.commands.boomboom;
 import com.loaf.morepvp.commands.die;
+import com.loaf.morepvp.commands.swap;
 import com.loaf.morepvp.commands.zappywand;
 
 import org.bukkit.Bukkit;
@@ -36,7 +38,9 @@ public final class MorePvp extends JavaPlugin {
     public void onEnable() {
         registerCommandExecutor("zappywand", new zappywand());
         registerCommandExecutor("CommandSetHealth", new CommandSetHealth());
-        registerCommandExecutor("die", new die());
+        //registerCommandExecutor("die", new die());
+        registerCommandExecutor("swap", new swap());
+        registerCommandExecutor("boomboom", new boomboom());
         Bukkit.getPluginManager().registerEvents(new InteractListiner(), this);
        
     }
@@ -54,6 +58,10 @@ public final class MorePvp extends JavaPlugin {
             throw new NullPointerException(String.format("\"%s\" is not registered in the plugin.yml", commandName));
         command.setExecutor(commandExecutor);
     }
+    
+
+
+    
 
     
 }
