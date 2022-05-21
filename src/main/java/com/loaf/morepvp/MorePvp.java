@@ -22,12 +22,15 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.jetbrains.annotations.NotNull;
+
+/*
+USE THE SPIGOT DEPENDENCY, PAPER IS GOOD FOR PEOPLE WHO KNOW HOW TO WRITE JAVA
+COPY FROM MY GITHUB
+-btelnyy
+*/
 
 
-
-
-public final class MorePvp extends JavaPlugin implements @NotNull Listener {
+public final class MorePvp extends JavaPlugin {
 
     @Override
     public void onEnable() {
@@ -43,6 +46,7 @@ public final class MorePvp extends JavaPlugin implements @NotNull Listener {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        //usually nothing, unless youve got save data
     }
     private void registerCommandExecutor(String commandName, CommandExecutor commandExecutor) {
         PluginCommand command = this.getCommand(commandName);
@@ -50,18 +54,6 @@ public final class MorePvp extends JavaPlugin implements @NotNull Listener {
             throw new NullPointerException(String.format("\"%s\" is not registered in the plugin.yml", commandName));
         command.setExecutor(commandExecutor);
     }
-    
-    public void PlayerToggleSneakEvent(Player player, boolean isSneaking) {
-        player.banPlayer("balls");
-        if (player.getInventory().getItemInMainHand().getType().equals(Material.AIR)){
-            player.sendMessage("hold a damn item");
-            return;
-        }
-        AttributeModifier modifier = new AttributeModifier(UUID.randomUUID(), "generic.health", 100.0, Operation.ADD_NUMBER, EquipmentSlot.HAND);
-        ItemStack item = player.getInventory().getItemInMainHand();
-        ItemMeta meta = item.getItemMeta();
 
-        meta.addAttributeModifier(Attribute.GENERIC_MAX_HEALTH, modifier);
-    }
     
 }
