@@ -44,7 +44,7 @@ public class InteractListiner implements Listener{
         }
         
         switch(weaponname){
-            case "bomb on a stick":
+            case "BoomBoom Wand":
                 Entity goat = user.getWorld().spawnEntity(user.getLocation(), EntityType.GOAT);
                 goat.setVelocity(user.getLocation().getDirection().multiply(2));
                 goat.setCustomName("bullet"); 
@@ -59,7 +59,7 @@ public class InteractListiner implements Listener{
                     }
                 }.runTaskLater(Bukkit.getPluginManager().getPlugin("morepvp"), 100);
                 break;
-            case "buzzbuzz":
+            case "Buzzy Wand":
             Bee bee = (Bee) event.getPlayer().getWorld().spawnEntity(event.getPlayer().getLocation(), EntityType.BEE);
             bee.setCustomName("buzzyBullet");
             bee.setCustomNameVisible(true);
