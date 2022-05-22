@@ -1,6 +1,6 @@
 name: MorePvp
 version: '${project.version}'
-main: com.loaf.morepvp.MorePvp
+main: me.loaf.morepvp.MorePvp
 api-version: 1.18
 commands:
    zappywand:

@@ -1,4 +1,4 @@
-package com.loaf.morepvp.EventListiner;
+package me.loaf.morepvp.EventListiner;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 
@@ -45,21 +45,14 @@ public class InteractListiner implements Listener{
                 goat.setCustomName("bullet"); 
                 new BukkitRunnable(){
                     public void run(){
-                        goat.getWorld().createExplosion(goat,5 ,false,false);
+                        goat.getWorld().createExplosion(goat.getLocation(),5 ,false,false);
                         ((LivingEntity) goat).damage(100);
                     }
                 }.runTaskLater(Bukkit.getPluginManager().getPlugin("morepvp"), 100);
-               
             }
-            
-        
         }
         
     }
-    
-
-    
-    
     @EventHandler
     public void PlayerDropItemEvent(PlayerDropItemEvent event){
         
@@ -68,7 +61,7 @@ public class InteractListiner implements Listener{
     }
     @EventHandler
     public void sneak(PlayerToggleSneakEvent event) {
-        Player player = event.getPlayer();
+        //Player player = event.getPlayer();
        
         //player.getWorld().strikeLightning(player.getLocation());
         
@@ -98,10 +91,9 @@ public class InteractListiner implements Listener{
             //Bukkit.broadcastMessage(event.getEntity().getName());
             
         }else if(weaponname.equals("bomb on a stick")){
-            Location loc = event.getEntity().getLocation();
             if(event.getCause().equals(DamageCause.ENTITY_ATTACK)){
                 
-                new BukkitRunnable(){public void run(){event.getEntity().getWorld().createExplosion(hitter,5 ,false,false);}}.runTaskLater(Bukkit.getPluginManager().getPlugin("morepvp"), 1);
+                new BukkitRunnable(){public void run(){event.getEntity().getWorld().createExplosion(hitter.getLocation(),5 ,false,false);}}.runTaskLater(Bukkit.getPluginManager().getPlugin("morepvp"), 1);
             }
             
         
@@ -111,7 +103,5 @@ public class InteractListiner implements Listener{
 
         }
     }
-    
-
 }
 

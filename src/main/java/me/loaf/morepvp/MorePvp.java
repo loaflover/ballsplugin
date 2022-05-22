@@ -1,34 +1,21 @@
-package com.loaf.morepvp;
+package me.loaf.morepvp;
 
 
-import java.util.UUID;
-
-import com.loaf.morepvp.EventListiner.InteractListiner;
-import com.loaf.morepvp.commands.CommandSetHealth;
-import com.loaf.morepvp.commands.boomboom;
-import com.loaf.morepvp.commands.die;
-import com.loaf.morepvp.commands.swap;
-import com.loaf.morepvp.commands.zappywand;
+import me.loaf.morepvp.EventListiner.InteractListiner;
+//yes loaf, you can use * to mean wildcard.
+import me.loaf.morepvp.commands.*;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
-import org.bukkit.attribute.Attribute;
-import org.bukkit.attribute.AttributeModifier;
-import org.bukkit.attribute.AttributeModifier.Operation;
-
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.PluginCommand;
-import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
-import org.bukkit.inventory.EquipmentSlot;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /*
-USE THE SPIGOT DEPENDENCY, PAPER IS GOOD FOR PEOPLE WHO KNOW HOW TO WRITE JAVA
-COPY FROM MY GITHUB
--btelnyy
+SEE pom.xml TO CHANGE TO PAPER API
+
+For the love of god, please remove unused Imports from the other classes, its a massive pain finding 
+actual warnings in a sea of unused imports.
+
 */
 
 
@@ -58,10 +45,4 @@ public final class MorePvp extends JavaPlugin {
             throw new NullPointerException(String.format("\"%s\" is not registered in the plugin.yml", commandName));
         command.setExecutor(commandExecutor);
     }
-    
-
-
-    
-
-    
 }
