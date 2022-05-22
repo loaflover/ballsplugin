@@ -1,4 +1,4 @@
-package com.loaf.morepvp.EventListiner;
+package me.loaf.morepvp.EventListiner;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 
@@ -50,6 +50,7 @@ public class InteractListiner implements Listener{
                 goat.setCustomName("bullet"); 
                 new BukkitRunnable(){
                     public void run(){
+
                         if(goat.isDead()){
                             return;
                         }
@@ -82,14 +83,38 @@ public class InteractListiner implements Listener{
     
     
     
-    @EventHandler(priority = EventPriority.LOWEST)
-    public void entityDamage(EntityDamageByEntityEvent event)
-    {
-        if(!(event.getDamager() instanceof Player) ||  !(event.getEntity() instanceof Player)){
-            return;
+
+                        goat.getWorld().createExplosion(goat.getLocation(),5 ,false,false);
+                        ((LivingEntity) goat).damage(100);
+                    }
+                }.runTaskLater(Bukkit.getPluginManager().getPlugin("morepvp"), 100);
+            }
         }
-        Player hitter = (Player) event.getDamager();
-        String weaponname = hitter.getInventory().getItemInMainHand().getItemMeta().getDisplayName();
+        
+    }
+    @EventHandler
+    public void PlayerDropItemEvent(PlayerDropItemEvent event){
+        
+        Player die = event.getPlayer();
+        die.kickPlayer("BOZO you stupid little bitch how dare you litter on my perfect minecraft server");
+    }
+    @EventHandler
+    public void sneak(PlayerToggleSneakEvent event) {
+        //Player player = event.getPlayer();
+       
+        //player.getWorld().strikeLightning(player.getLocation());
+        
+        // if (player.getInventory().getItemInMainHand().getType().equals(Material.AIR)){
+        //     player.sendMessage("hold a damn item");
+        //     return;
+        // }
+        // AttributeModifier modifier = new AttributeModifier(UUID.randomUUID(), "generic.health", 100.0, Operation.ADD_NUMBER, EquipmentSlot.HAND);
+        // ItemStack item = player.getInventory().getItemInMainHand();
+        // ItemMeta meta = item.getItemMeta();
+
+        // meta.addAttributeModifier(Attribute.GENERIC_MAX_HEALTH, modifier);
+    }
+
 
         switch(weaponname) {
             case "Magic Wand":
@@ -116,9 +141,8 @@ public class InteractListiner implements Listener{
           }
           
         
+
         
     }
-    
-
 }
 

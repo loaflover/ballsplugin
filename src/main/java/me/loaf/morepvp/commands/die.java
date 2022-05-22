@@ -1,4 +1,4 @@
-package com.loaf.morepvp.commands;
+package me.loaf.morepvp.commands;
 
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

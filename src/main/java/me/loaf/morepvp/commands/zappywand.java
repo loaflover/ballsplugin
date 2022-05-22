@@ -1,4 +1,4 @@
-package com.loaf.morepvp.commands;
+package me.loaf.morepvp.commands;
 
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -16,16 +16,19 @@ import org.bukkit.attribute.AttributeModifier.Operation;
 import org.bukkit.inventory.*;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import net.kyori.adventure.text.*;
-
-public class boomboom implements CommandExecutor{
+public class zappywand implements CommandExecutor{
     public boolean onCommand(CommandSender sender, Command command, String arg, String[] args){
         Player user = (Player)sender;
         ItemStack item = new ItemStack(Material.STICK, 1);
         ItemMeta meta = item.getItemMeta();
-        
-        meta.setDisplayName("bomb on a stick");
-        
+        meta.setDisplayName("Magic Wand");
+        /*
+        Paper API Stuff
+        ArrayList<Component> lore = new ArrayList<Component>();
+        Component c = Component.text("big balls");
+        lore.add(c);
+        meta.lore().add(c);
+        */
         ArrayList<String> lore = new ArrayList<String>();
         lore.add("big balls");
         meta.setLore(lore);
