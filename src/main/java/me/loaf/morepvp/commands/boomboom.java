@@ -22,7 +22,7 @@ public class boomboom implements CommandExecutor{
         ItemStack item = new ItemStack(Material.STICK, 1);
         ItemMeta meta = item.getItemMeta();
         
-        meta.setDisplayName("bomb on a stick");
+        meta.setDisplayName("BoomBoom Wand");
         
         ArrayList<String> lore = new ArrayList<String>();
         lore.add("big balls");

@@ -69,29 +69,8 @@ public class InteractListiner implements Listener{
 
         }
     }
-    @EventHandler
-    public void PlayerDropItemEvent(PlayerDropItemEvent event){
-        
-        Player die = event.getPlayer();
-        die.kickPlayer("BOZO you stupid little bitch how dare you litter on my perfect minecraft server");
-    }
-    @EventHandler
-    public void sneak(PlayerToggleSneakEvent event) {
-        //Player player = event.getPlayer();
-       
-        //player.getWorld().strikeLightning(player.getLocation());
-        
-        // if (player.getInventory().getItemInMainHand().getType().equals(Material.AIR)){
-        //     player.sendMessage("hold a damn item");
-        //     return;
-        // }
-        // AttributeModifier modifier = new AttributeModifier(UUID.randomUUID(), "generic.health", 100.0, Operation.ADD_NUMBER, EquipmentSlot.HAND);
-        // ItemStack item = player.getInventory().getItemInMainHand();
-        // ItemMeta meta = item.getItemMeta();
 
-        // meta.addAttributeModifier(Attribute.GENERIC_MAX_HEALTH, modifier);
-    }
-    @EventHandler(priority = EventPriority.LOWEST)
+    @EventHandler
     public void entityDamage(EntityDamageByEntityEvent event)
     {
         Player hitter = (Player) event.getDamager();
@@ -100,17 +79,18 @@ public class InteractListiner implements Listener{
             return;
         }
         switch(weaponname) {
-            case "Magic Wand":
+            case "Testicle Obliterator Wand":
+            //change this to multiply by current vector so you still take knockback
                 new BukkitRunnable(){public void run(){event.getEntity().setVelocity(new Vector(0, 1, 0));}}.runTaskLater(Bukkit.getPluginManager().getPlugin("morepvp"), 1);
               break;
-            case "bomb on a stick":
+            case "BoomBoom Wand":
                 Location loc = event.getEntity().getLocation();
                 if(event.getCause().equals(DamageCause.ENTITY_ATTACK)){
                 
                     new BukkitRunnable(){public void run(){event.getEntity().getWorld().createExplosion(hitter,5 ,false,false);}}.runTaskLater(Bukkit.getPluginManager().getPlugin("morepvp"), 1);
                 }
               break;
-              case "zappy":
+              case "Electric Wand":
               event.getEntity().getWorld().strikeLightning(event.getEntity().getLocation());
               break;
               case "":

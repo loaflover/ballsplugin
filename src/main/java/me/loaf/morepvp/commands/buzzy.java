@@ -1,27 +1,25 @@
 package me.loaf.morepvp.commands;
 
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
-import org.bukkit.command.Command;
-
 import java.util.ArrayList;
-import java.util.UUID;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.attribute.AttributeModifier.Operation;
-import org.bukkit.inventory.*;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.jetbrains.annotations.NotNull;
 
-public class zappywand implements CommandExecutor{
+public class buzzy implements CommandExecutor{
     public boolean onCommand(CommandSender sender, Command command, String arg, String[] args){
         Player user = (Player)sender;
         ItemStack item = new ItemStack(Material.STICK, 1);
         ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("Electric Wand");
+        meta.setDisplayName("Buzzy Wand");
         /*
         Paper API Stuff
         ArrayList<Component> lore = new ArrayList<Component>();
@@ -37,5 +35,7 @@ public class zappywand implements CommandExecutor{
         item.setItemMeta(meta);
         user.getInventory().addItem(item);
         return true;
-    }  
+    }
+
+    
 }

@@ -28,6 +28,8 @@ public final class MorePvp extends JavaPlugin {
         //registerCommandExecutor("die", new die());
         registerCommandExecutor("swap", new swap());
         registerCommandExecutor("boomboom", new boomboom());
+        registerCommandExecutor("yeeter", new yeeter());
+        registerCommandExecutor("buzzy", new buzzy());
         Bukkit.getPluginManager().registerEvents(new InteractListiner(), this);
        
     }

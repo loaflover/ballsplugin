@@ -7,6 +7,18 @@ commands:
       description: ZAP ZAP
       usage: /zappywand <player>
       permission: btelnyy.command.givehealth
+   boomboom:
+      description: ZAP ZAP
+      usage: /boomboom
+      permission: btelnyy.command.givehealth 
+   yeeter:
+      description: ZAP ZAP
+      usage: /yeeter
+      permission: btelnyy.command.givehealth
+   buzzy:
+      description: ZAP ZAP
+      usage: /buzzy
+      permission: btelnyy.command.givehealth
    CommandSetHealth:
       description: ZAP ZAP
       usage: /sethealth <player>
@@ -19,7 +31,4 @@ commands:
       description: ZAP ZAP
       usage: /swap
       permission: btelnyy.command.givehealth 
-   boomboom:
-      description: ZAP ZAP
-      usage: /boomboom
-      permission: btelnyy.command.givehealth 
+   
