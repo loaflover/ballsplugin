@@ -68,29 +68,6 @@ public class InteractListiner implements Listener{
             break;
 
         }
-        if(weaponname.equals("")){
-            
-                
-               
-            
-            
-        
-        }
-        
-    }
-    
-
-    
-    
-    
-
-                        goat.getWorld().createExplosion(goat.getLocation(),5 ,false,false);
-                        ((LivingEntity) goat).damage(100);
-                    }
-                }.runTaskLater(Bukkit.getPluginManager().getPlugin("morepvp"), 100);
-            }
-        }
-        
     }
     @EventHandler
     public void PlayerDropItemEvent(PlayerDropItemEvent event){
@@ -114,8 +91,14 @@ public class InteractListiner implements Listener{
 
         // meta.addAttributeModifier(Attribute.GENERIC_MAX_HEALTH, modifier);
     }
-
-
+    @EventHandler(priority = EventPriority.LOWEST)
+    public void entityDamage(EntityDamageByEntityEvent event)
+    {
+        Player hitter = (Player) event.getDamager();
+        String weaponname = hitter.getInventory().getItemInMainHand().getItemMeta().getDisplayName();
+        if(!(event.getDamager() instanceof Player) ||  !(event.getEntity() instanceof Player)){
+            return;
+        }
         switch(weaponname) {
             case "Magic Wand":
                 new BukkitRunnable(){public void run(){event.getEntity().setVelocity(new Vector(0, 1, 0));}}.runTaskLater(Bukkit.getPluginManager().getPlugin("morepvp"), 1);
