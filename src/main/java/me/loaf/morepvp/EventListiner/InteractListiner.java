@@ -55,7 +55,9 @@ public class InteractListiner implements Listener{
                             return;
                         }
                         goat.getWorld().createExplosion(goat, 5,false,false);
+                        //goat.getLocation().createExplosion(5, false, false);
                         ((LivingEntity) goat).damage(100);
+                        
                     }
                 }.runTaskLater(Bukkit.getPluginManager().getPlugin("morepvp"), 100);
                 break;
@@ -64,6 +66,7 @@ public class InteractListiner implements Listener{
             bee.setCustomName("buzzyBullet");
             bee.setCustomNameVisible(true);
             //bee.setTarget(event.getPlayer()); add a way to find target player here
+            //use attack instead, or try a flying snowball?
             bee.setAnger(100000);
             break;
 
