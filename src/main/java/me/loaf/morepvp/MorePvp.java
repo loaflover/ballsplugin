@@ -11,7 +11,6 @@ import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /*
-SEE pom.xml TO CHANGE TO PAPER API
 
 For the love of god, please remove unused Imports from the other classes, its a massive pain finding 
 actual warnings in a sea of unused imports.

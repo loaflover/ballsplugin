@@ -42,7 +42,8 @@ public class InteractListiner implements Listener{
         if(!(event.getAction().equals(Action.RIGHT_CLICK_AIR)||event.getAction().equals(Action.RIGHT_CLICK_BLOCK))){
             return;
         }
-        
+        //this may be better if the event is in the class file, as this would reduce lines here, and
+        //improve code visibility
         switch(weaponname){
             case "BoomBoom Wand":
                 Entity goat = user.getWorld().spawnEntity(user.getLocation(), EntityType.GOAT);
@@ -96,6 +97,7 @@ public class InteractListiner implements Listener{
               case "Electric Wand":
               event.getEntity().getWorld().strikeLightning(event.getEntity().getLocation());
               break;
+              //were you following a tutorial or is this debug code?
               case "":
               // code block
               break;
