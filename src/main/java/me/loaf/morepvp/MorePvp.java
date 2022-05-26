@@ -12,8 +12,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 /*
 
-For the love of god, please remove unused Imports from the other classes, its a massive pain finding 
-actual warnings in a sea of unused imports.
 
 */
 

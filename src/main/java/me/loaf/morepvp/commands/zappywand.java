@@ -6,9 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.command.Command;
 
 import java.util.ArrayList;
-import java.util.UUID;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
