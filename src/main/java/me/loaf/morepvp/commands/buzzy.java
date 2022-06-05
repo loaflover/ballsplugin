@@ -15,10 +15,13 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class buzzy implements CommandExecutor{
     public boolean onCommand(CommandSender sender, Command command, String arg, String[] args){
+        
+        
+        
         Player user = (Player)sender;
-        ItemStack item = new ItemStack(Material.STICK, 1);
+        ItemStack item = new ItemStack(Material.LEATHER_CHESTPLATE, 1);
         ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("Buzzy Wand");
+        meta.setDisplayName("Buzzy Shirt");
         /*
         Paper API Stuff
         ArrayList<Component> lore = new ArrayList<Component>();
@@ -29,8 +32,6 @@ public class buzzy implements CommandExecutor{
         ArrayList<String> lore = new ArrayList<String>();
         lore.add("big balls");
         meta.setLore(lore);
-        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED, new AttributeModifier("attack damsssage: ", 100.0, Operation.ADD_NUMBER));
-        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, new AttributeModifier("attack damage: ", 2.0, Operation.ADD_NUMBER));
         item.setItemMeta(meta);
         user.getInventory().addItem(item);
         return true;
